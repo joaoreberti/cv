@@ -1,0 +1,57 @@
+:root {
+    --main-bg-color: rgb(116, 17, 155);
+    --secondary-bg-color: rgb(35, 12, 44);
+    color: white;
+}
+
+body{
+    width: 2480px;
+    height: 3508px;
+}
+
+header {
+    display: flex;
+}
+
+.d-flex{
+    display: flex;
+}
+
+.geeks {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    z-index: -1;
+}
+
+.geeks::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        var(--main-bg-color) 0,
+        var(--main-bg-color) 10px,
+        var(--secondary-bg-color) 10px,
+        var(--secondary-bg-color) 20px
+    );
+}
+
+.geeks::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--main-bg-color) 0,
+        var(--main-bg-color) 10px,
+        var(--secondary-bg-color) 10px,
+        var(--secondary-bg-color) 20px
+    );
+    mix-blend-mode: difference;
+}
